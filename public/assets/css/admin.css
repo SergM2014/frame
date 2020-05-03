@@ -1,0 +1,29 @@
+.language-dropbox{
+    margin-right:10px;
+}
+.custom-alert{
+    position:fixed !important;
+    top: 200px;
+    width: 80%;
+    z-index: 1000;
+    left: 10%;
+}
+
+
+.pointer{
+    cursor:pointer;
+}
+
+.popup-menu{
+    position: absolute;
+    background-color: #e8b493;
+    border: 1px solid;
+    border-radius: 5px;
+    min-width: 120px;
+    padding: 3px;
+    z-index:1000;
+}
+
+.popup-menu-del-btn{
+    margin: -8px 0 -8px -12px;
+}
