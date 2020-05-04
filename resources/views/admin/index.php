@@ -5,7 +5,7 @@
 
 <div id="clickMeToPopup" class="pointer">Click me to popup!</div>
 <div id="clickMeToModal" class="pointer">Click me to show modal!</div>
-<div id="clickMeToAlert" class="pointer">Click me to show modal!</div>
+<div id="clickMeToAlert" class="pointer">Click me to showalert!</div>
 
 <?php else : ?>
 
