@@ -1,6 +1,6 @@
 <?php
 
-$attrLang = "uk";
+$attrLangL = "uk";
 
 $dragToMoveAndClickToDel = "Натисніть щоб видалити або перетяніть щоб змінити положення зоображення";
 $backToSiteL = "Назад до сайту";
@@ -42,3 +42,5 @@ $addL = "Додати";
 $showL = "Показати";
 $updateL = "Оновити";
 $clickCaptchaL = "Клікніть капчу!";
+$writeUsL = "Напиши нам";
+$repeatPasswordL = "Повторить пароль";

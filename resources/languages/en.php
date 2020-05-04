@@ -1,6 +1,6 @@
 <?php
 
-$attrLang = "en";
+$attrLangL = "en";
 $dragToMoveAndClickToDel = "Drag to the position of the image or clicl todelete";
 $backToSiteL = "Back to site";
 $adminEntryTitleL = "Enter Admin Zone";
@@ -41,3 +41,5 @@ $addL = "Add";
 $showL = "Show";
 $updateL = "Update";
 $clickCaptchaL = "Click kaptcha!";
+$writeUsL = "Write Us";
+$repeatPasswordL = "Repeat password";

@@ -1,18 +1,18 @@
 
 
 
-<h1 class="alert-danger text-center">Add a form</h1>
+<h1 class="alert-danger text-center"><?= $writeUsL ?></h1>
 
 <?php includeImageUploadView('/common/partials/addImage.php', 'avatar', '/uploads/avatars/', @$_POST['imageData']) ?>
 
 
-<form action="/storeform" method="post">
+<form action="/<?= $attrLangL ?>/storeform" method="post">
 
     <input type="hidden" name="_token" id="_token" value="<?= \App\Lib\TokenService::printTocken('addForm') ?>" >
     <input type="hidden" name="imageData" id="imageData" value="<?= @$_POST['imageData'] ?>" >
 
     <div class="form-group row">
-        <label for=name" class="col-sm-2 col-form-label">Name</label>
+        <label for=name" class="col-sm-2 col-form-label"><?= $nameL ?></label>
         <div class="col-sm-10">
             <input type="text" class="form-control <?= $errors['name']? 'is-invalid' : '' ?>" name="name" id="name"
                    placeholder="Name" value="<?= @ $inputs['name'] ?>">
@@ -34,7 +34,7 @@
     </div>
 
     <div class="form-group row">
-        <label for="password" class="col-sm-2 col-form-label">Password</label>
+        <label for="password" class="col-sm-2 col-form-label"><?= $passwordL ?></label>
         <div class="col-sm-10">
             <input type="password" class="form-control <?= $errors['password']? 'is-invalid' : '' ?>" name="password"
                    id="password" placeholder="Password"  >
@@ -45,7 +45,7 @@
     </div>
 
     <div class="form-group row">
-        <label for="password2" class="col-sm-2 col-form-label">Password2</label>
+        <label for="password2" class="col-sm-2 col-form-label"><?= $repeatPasswordL ?></label>
         <div class="col-sm-10">
             <input type="password" class="form-control <?= $errors['password2']? 'is-invalid' : '' ?>" name="password2" id="password2" placeholder="Password2" >
             <div class="invalid-feedback">
@@ -118,7 +118,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">OK</button>
         </div>
     </div>
 </form>
