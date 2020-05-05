@@ -1,7 +1,6 @@
 <?php
 
 $attrLangL = "uk";
-
 $dragToMoveAndClickToDel = "Натисніть щоб видалити або перетяніть щоб змінити положення зоображення";
 $backToSiteL = "Назад до сайту";
 $adminEntryTitleL = "Війти до адмін зони";
@@ -44,3 +43,4 @@ $updateL = "Оновити";
 $clickCaptchaL = "Клікніть капчу!";
 $writeUsL = "Напиши нам";
 $repeatPasswordL = "Повторить пароль";
+$userDeletedL = "User is deleted";

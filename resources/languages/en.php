@@ -43,3 +43,12 @@ $updateL = "Update";
 $clickCaptchaL = "Click kaptcha!";
 $writeUsL = "Write Us";
 $repeatPasswordL = "Repeat password";
+$userDeletedL = "User is deleted";
+
+
+
+
+
+
+
+

@@ -5,8 +5,8 @@ namespace App\Process\Models;
 
 
 use App\Core\DataBase;
-use function \userDeleted;
-use function \smthWentWrong;
+
+
 
 class AdminModel extends DataBase
 {
@@ -107,7 +107,7 @@ class AdminModel extends DataBase
     public static function delete()
     {
         if(DEBUG_MODE){
-            $response= ["message"=> userDeleted() , "success"=> true, "userId"=> (int)$_POST['id'] ];
+            $response= ["message"=> translate('userDeletedL') , "success"=> true, "userId"=> (int)$_POST['id'] ];
             return $response;
         }
 
@@ -115,11 +115,11 @@ class AdminModel extends DataBase
         $stmt = self::conn()->prepare($sql);
         $stmt->bindValue(1, $_POST['id'], \PDO::PARAM_INT);
         if($stmt->execute())  {
-            $response= ["message"=> userDeleted() , "success"=> true, "userId"=> (int)$_POST['id'] ];
+            $response= ["message"=> translate('userDeletedL') , "success"=> true, "userId"=> (int)$_POST['id'] ];
             return $response;
         }
 
-        $response= ["message"=> smthWentWrong() , "fail"=> true, "userId"=> (int)$_POST['id'] ];
+        $response= ["message"=> translate('smthWentWrongL') , "fail"=> true, "userId"=> (int)$_POST['id'] ];
         return $response;
     }
 
