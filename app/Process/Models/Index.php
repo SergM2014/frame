@@ -10,10 +10,10 @@ use Gregwar\Captcha\CaptchaBuilder;
 
  class Index extends DataBase
  {
-     public function __construct()
-     {
-         $this->categories = $this->getGeneralInfo();
-     }
+    //  public function __construct()
+    //  {
+    //      $this->categories = $this->getGeneralInfo();
+    //  }
 
      private $categories;
 
