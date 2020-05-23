@@ -27,7 +27,7 @@ function postAjax(givenUrl, formData = new FormData){
         formData.append('ajax', true );
 
 
-            let url = "/" + Language.attrLang + givenUrl;
+            let url = "/" + Language.attrLangL + givenUrl;
 
             return   fetch(
                 url, {
