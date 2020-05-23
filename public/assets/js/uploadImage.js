@@ -129,7 +129,7 @@ if(submit_btn){
         let formData = new FormData(document.getElementById('imageForm'));
 
 
-        let currentLanguage = Language['attrLang'];
+        let currentLanguage = Language['attrLangL'];
 
                 let uploadUrl =  "/"+currentLanguage+"/images/upload"+ucFirst(imageCustomType);
 
@@ -166,7 +166,7 @@ if(reset_btn) {
 
          if(document.getElementById('image')) formData.append('image', document.getElementById('image').value);
 
-        let currentLanguage = Language['attrLang'];
+        let currentLanguage = Language['attrLangL'];
 
         let delUrl = "/"+currentLanguage+"/images/delete"+ucFirst(imageCustomType)
 
