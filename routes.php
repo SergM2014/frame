@@ -44,7 +44,8 @@ $routes = [
 
 
     
-
+    '/broadcast' =>'sseServer@broadcast', //sse server for broadcasting
+    '/testbroadcast' => 'index@testbroadcast',
 
 
 ];

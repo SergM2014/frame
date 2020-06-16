@@ -1,43 +1,40 @@
 <?php
-
 namespace App\Core;
 
 
-
+use Memcached;
 
  class Event
  {
-    private $title;
-
-    private $presentId;
-
-    private $action;
-
-    private $additonalParameter;
-
-    //  public function __construct($title = null, $id = null, $action = null, $additonalParametr = null)
-    //  {
-    //     @session_start();
-
+  
+    public  function fire($title = null, $additonalParameters = []){
         
-    //  }
-
-    public function fire($title = null, $presentId = null, $action = null, $additonalParameter = null){
-        //check if the session is running
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+       
         //check if the title is not null
-        if(is_null($title)) return;
+         if(is_null($title)) return;
 
-
-        //initialize sesion with the pesent datas
-        $presentDatas = compact($presentId, $action, $additonalParameter);
-        $_SESSION['event'][$title][$presentDatas];
-
+        $m = new Memcached();
+        $m -> addServer('127.0.0.1', 11211);
+        $m -> set($title, $additonalParameters,10);
+      
     }
 
-    public function listen(){
+    public  function listen(){
+       
+      
+        $events = [];
+
+        $m = new Memcached();
+        $m -> addServer('127.0.0.1', 11211);
+        $arr = $m ->getAllKeys();
+        $m -> flush();
+
+        foreach ($arr as $key => $event){
+            $events [$key] = json_encode($event);
+
+        }
+
+         return $events;
 
     }
      
@@ -50,3 +47,6 @@ namespace App\Core;
  }
  
 ?>
+
+
+ 
