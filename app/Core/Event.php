@@ -14,7 +14,7 @@ use Memcached;
          if(is_null($title)) return;
 
         $m = new Memcached();
-        $m -> addServer('127.0.0.1', 11211);
+        $m -> addServer(HOST, 11211);
         $m -> set($title, $additonalParameters,10);
       
     }
@@ -25,7 +25,7 @@ use Memcached;
         $events = [];
 
         $m = new Memcached();
-        $m -> addServer('127.0.0.1', 11211);
+        $m -> addServer(HOST, 11211);
         $arr = $m ->getAllKeys();
         $m -> flush();
 
