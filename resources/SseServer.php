@@ -2,21 +2,23 @@
 header('Cache-Control: no-cache');
 header("Content-Type: text/event-stream\n\n");
 
-
-//while (1) {
+ 
+  if(($events)){
+    echo "event:test\n";
+    echo "data: testing";
+    echo "\n\n";
+    echo "id:".uniqid()."\n";
+  }
  
  
-  foreach($events as $key => $event){
+  foreach($events as $action => $params){
 
-      echo "event: $key\n";
-      echo "data: $event";
+      echo "event:$action\n";
+      
+      echo "data: $params";
       echo "\n\n";
       echo "id:".uniqid()."\n";
   }
 
-
-  
-  // ob_end_flush();
-   flush();
-  sleep(3);
-//}
+  ob_end_flush();
+  // flush();
