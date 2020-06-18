@@ -43,9 +43,8 @@ $routes = [
     '/index/setTimeZone' => 'index@setTimeZone',
 
 
-    
-    '/broadcast' =>'sseServer@broadcast', //sse server for broadcasting
-    '/testbroadcast' => 'index@testbroadcast',
+   
+    '/listenbroadcast' => 'index@listenbroadcast',
 
 
 ];

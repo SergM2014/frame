@@ -1,9 +1,16 @@
-var evtSource = new EventSource("/broadcast", {
+// var evtSource = new EventSource("/broadcast", {
+// 	withCredentials: true
+//   });
+  var evtSource = new EventSource("SseServer.php", {
 	withCredentials: true
   });
 
 evtSource.addEventListener('open', function(){
 	console.log('open');
+})
+
+evtSource.addEventListener('ping', function(e){
+console.log(e)
 })
 
 evtSource.addEventListener('close', function(){

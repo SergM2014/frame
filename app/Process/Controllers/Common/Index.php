@@ -59,10 +59,10 @@ class Index  extends BaseController
          exit();
       }
 
-      public function testbroadcast()
+      public function listenbroadcast()
     	{
         
-        return ['view'=>'views/common/testbroadcast.php'];
+        return ['view'=>'views/common/listenbroadcast.php'];
       }
 
 
