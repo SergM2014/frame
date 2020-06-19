@@ -1,43 +1,47 @@
 <?php
-//header('Cache-Control: no-cache');
+header('Cache-Control: no-cache');
 header("Content-Type: text/event-stream\n\n");
 
- 
- 
 
-  while(true){
+while (1){
 
-      $time = time();
+    $events = [];
 
-      echo "event:ping\n";
-      echo "data: $time";
+    $m = new Memcached();
+    $m -> addServer('localhost', 11211);
+    $keys = $m ->getAllKeys();
+    if($keys){
+        foreach($keys as $key){
+            $events [$key] = $m -> get($key);
+        }
+    }
+    $m -> flush();
+      
+    
+    if($events){
+
+   
+    foreach($events as $action => $params){
+
+      echo "event:$action\n";
+      
+      echo "data: $params";
       echo "\n\n";
       echo "id:".uniqid()."\n";
 
       ob_end_flush();
-
       flush();
+    }
+  } else {
 
-      sleep(1);
-  }
-
-
-  // if(($events)){
-  //   echo "event:test\n";
-  //   echo "data: testing";
-  //   echo "\n\n";
-  //   echo "id:".uniqid()."\n";
-  // }
- 
- 
-  // foreach($events as $action => $params){
-
-  //     echo "event:$action\n";
+    echo "event:ping\n";
       
-  //     echo "data: $params";
-  //     echo "\n\n";
-  //     echo "id:".uniqid()."\n";
-  // }
-
-  // ob_end_flush();
- 
+    echo "data: 111";
+    echo "\n\n";
+    echo "id:".uniqid()."\n";
+    ob_end_flush();
+    flush();
+  }
+  
+  sleep(1);
+  }

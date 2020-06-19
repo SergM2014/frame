@@ -7,7 +7,7 @@ use Memcached;
  class Event
  {
   
-    public  function fire($title = null, $additionalParameters = null){
+    public static function fire($title = null, $additionalParameters = null){
         
        
         //check if the title is not null
@@ -15,11 +15,11 @@ use Memcached;
         $jsoned =  json_encode($additionalParameters);
         $m = new Memcached();
         $m -> addServer(HOST, 11211);
-        $m -> set($title, $jsoned,10);
+        $m -> set($title, $jsoned,3);
       
     }
 
-    public  function listen(){
+    public static function listen(){
        
         $events = [];
 
