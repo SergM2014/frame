@@ -14,8 +14,9 @@ while (1){
         foreach($keys as $key){
             $events [$key] = $m -> get($key);
         }
+        $m -> flush();
     }
-    $m -> flush();
+   
       
     
     if($events){

@@ -36,6 +36,7 @@ class Index  extends BaseController
          Event::fire('action1',['presentId' =>'1']);
          Event::fire('action2', ['presentId' => 2, 'someAction' => 'action2', 'additionalParametr' => 'something_else']);
          Event::fire('action3');
+
         return ['view'=>'views/common/index.php'];
       }
 
