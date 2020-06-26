@@ -1,6 +1,4 @@
-// var evtSource = new EventSource("/broadcast", {
-// 	withCredentials: true
-//   });
+
   let evtSource = new EventSource("SseServer.php", {
 	withCredentials: true
   });
@@ -37,10 +35,3 @@ evtSource.addEventListener('action2', function(e){
 	// console.log(JSON.parse(e.data));
 	
 })
-
-// evtSource.addEventListener('action3', function(e){
-	
-// 	var msg = JSON.parse(e.data);
-// 	console.log('this is action 3-> '+msg);
-	
-// })
