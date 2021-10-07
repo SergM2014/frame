@@ -162,7 +162,7 @@ class HelperService {
 
         if(DEFAULT_LANG != $lang)  array_unshift($url, $lang);
 
-        $url = @ implode($url, '/');
+        $url = @ implode( '/', $url);
         return $url;
 
     }

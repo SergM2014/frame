@@ -14,8 +14,8 @@
     define('AMOUNTONPAGE',3);
     define('AMOUNTONPAGEADMIN',6);
     define('HOST', 'localhost'); //сервер
-    define('USER', 'serg'); //пользователь
-    define('PASSWORD', '11111111'); //пароль
+    define('USER', 'phpmyadmin'); //пользователь
+    define('PASSWORD', 'phpmyadmin'); //пароль
     define('NAME_BD', 'frame');
 
     define('DEBUG_MODE', true ); //режим отладки
