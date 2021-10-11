@@ -5,17 +5,9 @@ header("Content-Type: text/event-stream\n\n");
 
 while (1){
 
-    //$events = [];
-
     $m = new Memcached();
     $m -> addServer('localhost', 11211);
-    // $keys = $m ->getAllKeys();
-    // if($keys){
-    //     foreach($keys as $key){
-    //         $events [$key] = $m -> get($key);
-    //     }
-    //     $m -> flush();
-    // }
+
     $events = unserialize($m->get('events'));
     $m -> delete('events');
    
@@ -24,18 +16,21 @@ while (1){
     if($events){
 
    
-    foreach($events as $action => $params){
+        foreach($events as $action => $params){
 
-      echo "event:$action\n";
-      
-      echo "data: $params";
-      echo "\n\n";
-      echo "id:".uniqid()."\n";
+            echo "event:$action\n";
+            
+            echo "data: $params";
+            echo "\n\n";
+            echo "id:".uniqid()."\n";
 
-      ob_end_flush();
-      flush();
-       }
-        } else {
+            ob_end_flush();
+            flush();
+            
+          }
+        }
+         else 
+         {
 
           echo "event:ping\n";
             

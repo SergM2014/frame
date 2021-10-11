@@ -20,12 +20,12 @@ evtSource.addEventListener('close', function(){
 	console.log('close');
 })
 
-// evtSource.addEventListener('action1', function(e){
-// 	console.log(e);
-// 	var msg = JSON.parse(e.data);
-// 	console.log('this is action 1-> '+msg.presentId);
+evtSource.addEventListener('action1', function(e){
+	//console.log(e);
+	var msg = JSON.parse(e.data);
+	console.log('this is action 1-> '+msg.presentId);
 	
-// })
+})
 evtSource.addEventListener('action2', function(e){
 	
 	var msg = JSON.parse(e.data);
